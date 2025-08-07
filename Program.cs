@@ -14,6 +14,10 @@ Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 //LoopsDemo();
 //StudentGradingDemo();
 
+//TwoDimensionArraydemo();
+
+JaggedArrayDemo();
+
 static void VariableDeclarationdemo()
 {
 
@@ -163,5 +167,46 @@ static void StudentGradingDemo()
     else
     {
         Console.WriteLine("Status: Fail");
+    }
+}
+
+static void TwoDimensionArraydemo()
+{
+    // 2 dimensional arrays
+    Console.WriteLine("2 Dimensional Array Example:");
+    int[,] twoDimensionalArray = new int[3, 3]
+    {
+    { 1, 2, 3 },
+    { 4, 5, 6 },
+    { 7, 8, 9 }
+    };
+
+    for (int i = 0; i < twoDimensionalArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < twoDimensionalArray.GetLength(1); j++)
+        {
+            Console.Write(twoDimensionalArray[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+static void JaggedArrayDemo()
+{
+    // jgged arrays
+
+    int[][] jaggedArray = new int[3][];
+    jaggedArray[0] = new int[] { 1, 2, 3 };
+    jaggedArray[1] = new int[] { 4, 5, 6, 7 };
+
+    jaggedArray[2] = new int[] { 8, 9 };
+    Console.WriteLine("Jagged Array Example:");
+    foreach (var array in jaggedArray)
+    {
+        foreach (var item in array)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
     }
 }
