@@ -4,6 +4,27 @@ using MyFirstConsoleIBMproject;
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 
+Employee employee = new Employee();
+Console.WriteLine("Please enter your ID:");
+employee.Id = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Please enter your Employee ID:");
+employee.EmployeeId = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Please enter your Name:");
+employee.Name = Console.ReadLine();
+Console.WriteLine("Please enter your City:");   
+employee.City = Console.ReadLine();
+Console.WriteLine("Please enter your Age:");
+employee.Age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Please enter your Role:");
+employee.Role = Console.ReadLine();
+Console.WriteLine("Please enter your Email:");
+employee.Email = Console.ReadLine();    
+Console.WriteLine("Please enter your Salary:");
+employee.Salary = Convert.ToDouble(Console.ReadLine()); 
+employee.DisplayPersonDetails();
+Console.WriteLine($"Personal Info: {employee.GetPersonInfo()}");  
+Console.WriteLine($"Employee Info: {employee.EmployeeId}, Role: {employee.Role}, Email: {employee.Email}, Salary: {employee.Salary:C}"); // :C formats as currency    
+
 //Product myproduct = new Product();
 
 //WorkingwithProperties(myproduct);
@@ -27,8 +48,10 @@ Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 //DataTypeRanges();
 
 //ProductDetailsDemo();
+//WorkingwithProperties(new Product("Laptop", 150000.00, 20));
 
 //PersonDetailsDemo();
+
 
 static void VariableDeclarationdemo()
 {
@@ -287,4 +310,6 @@ static void PersonDetailsDemo()
     person1.DisplayPersonDetails();
     // Using auto-implemented properties
     Console.WriteLine($"Person info:{person1.GetPersonInfo()}");
+    Console.WriteLine($"Person 1 details: {person1.ToString()}"); // Using ToString() method       
+
 }

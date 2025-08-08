@@ -10,8 +10,8 @@ namespace MyFirstConsoleIBMproject
     {
         //auto-implemented properties for Person class
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string City { get; set; }
+        public string? Name { get; set; }
+        public string? City { get; set; }
         public int Age { get; set; }
 
         public Person() { }
@@ -40,6 +40,9 @@ namespace MyFirstConsoleIBMproject
             City = city;
             Age = age;
         }
-
+        public override string ToString()
+        {
+            return $"ID: {Id}, Name: {Name}, City: {City}, Age: {Age}";
+        }
     }
 }
