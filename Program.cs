@@ -4,7 +4,31 @@ using MyFirstConsoleIBMproject;
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 
+//Product myproduct = new Product();
+
+//WorkingwithProperties(myproduct);
+
+//VariableDeclarationdemo();
+
+//PersonDetails();
+
+//iresult = CalculationDemo();
+//Console.WriteLine( $"The result is: {CalculationDemo()}");
+
+//LoopsDemo();
+//StudentGradingDemo();
+
+//TwoDimensionArraydemo();
+
+//JaggedArrayDemo();
+
+// value types data ranges
+
 //DataTypeRanges();
+
+//ProductDetailsDemo();
+
+//PersonDetailsDemo();
 
 static void VariableDeclarationdemo()
 {
@@ -202,23 +226,6 @@ static void JaggedArrayDemo()
 static void DataTypeRanges()
 {
 
-    //VariableDeclarationdemo();
-
-    //PersonDetails();
-
-    //iresult = CalculationDemo();
-    //Console.WriteLine( $"The result is: {CalculationDemo()}");
-
-    //LoopsDemo();
-    //StudentGradingDemo();
-
-    //TwoDimensionArraydemo();
-
-    //JaggedArrayDemo();
-
-    // value types data ranges
-
-
     Console.WriteLine(int.MinValue + " " + int.MaxValue);
     Console.WriteLine(long.MinValue + " " + long.MaxValue);
     Console.WriteLine(short.MinValue + " " + short.MaxValue);
@@ -228,4 +235,56 @@ static void DataTypeRanges()
     Console.WriteLine(decimal.MinValue + " " + decimal.MaxValue);
     Console.WriteLine(char.MinValue + " " + char.MaxValue);
     Console.WriteLine(bool.FalseString + " " + bool.TrueString);
+}
+
+static void ProductDetailsDemo()
+{
+    Product product = new Product("Laptop", 150000.00, 20);
+    product.DisplayProductDetails();
+    Console.WriteLine($"Total Price: {product.CalculateTotalPrice():C}"); // :C formats as currency 
+    Console.WriteLine($"Price after 10% discount: {product.ApplyDiscount(10):C}"); // :C formats as currency
+    Console.WriteLine($" How many items of Product you want to  restock:");
+    int restockQuantity = Convert.ToInt32(Console.ReadLine());
+    product.Restock(restockQuantity);
+    Console.WriteLine($"How many items of Product you want to sell:");
+    int sellQuantity = Convert.ToInt32(Console.ReadLine());
+    product.Sell(sellQuantity);
+    Console.WriteLine($"Is the product in stock? {product.IsInStock()}");
+    Console.WriteLine($"Updating product price to new Price");
+    double newPrice = Convert.ToDouble(Console.ReadLine());
+
+    product.UpdatePrice(newPrice);
+
+    Console.WriteLine("Press any key to exit...");
+}
+
+static void WorkingwithProperties(Product myproduct)
+{
+    // Setting product details with set accessors in properties
+    myproduct.ProductName = "Mobile";
+    myproduct.ProductPrice = 150000.00;
+    myproduct.ProductQuantity = 10;
+    // Displaying product details with get accessors in properties
+    Console.WriteLine($"Product Name: {myproduct.ProductName}, Product Price: {myproduct.ProductPrice:C}, Product Quantity: {myproduct.ProductQuantity}");
+}
+
+static void PersonDetailsDemo()
+{
+    Person person = new Person(1, "John Doe", "New York", 30);
+    person.DisplayPersonDetails();
+    Console.WriteLine($"Person info:{person.GetPersonInfo()}");
+    // Updating person details
+    person.UpdatePersonDetails("Munna", "Bangalore", 28);
+    person.DisplayPersonDetails();
+
+
+    Person person1 = new Person();
+    person1.Id = 2;
+    person1.Name = "Jane Smith";
+    person1.City = "Chennai";
+
+    person1.Age = 25;
+    person1.DisplayPersonDetails();
+    // Using auto-implemented properties
+    Console.WriteLine($"Person info:{person1.GetPersonInfo()}");
 }

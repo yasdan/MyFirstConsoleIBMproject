@@ -14,8 +14,8 @@ namespace MyFirstConsoleIBMproject
 
         public StudentGrading()
         {
-           // studentName = "Default Student";
-           // subjectMarks = new int[] { 0, 0, 0, 0, 0 };
+            studentName = "Default Student";
+           subjectMarks = new int[] { 0, 0, 0, 0, 0 };
         }
         public StudentGrading(string name, int[] marks)
         {

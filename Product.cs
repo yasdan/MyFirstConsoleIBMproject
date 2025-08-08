@@ -8,14 +8,17 @@ namespace MyFirstConsoleIBMproject
 {
     internal class Product
     {
-        //data members
+        //data members:
+        //private fields
         private string productName;
         private double productPrice;
         private int productQuantity;
         //constructor
+        
         public Product()    //default constructor
         {
         }
+        
 
         //parameterized constructor (overloaded constructor)
         public Product(string name, double price, int quantity)
@@ -63,7 +66,7 @@ namespace MyFirstConsoleIBMproject
         }
         //method to check stock availability
         public bool IsInStock()
-        {
+        { 
             return productQuantity > 0;
         }
 
