@@ -4,26 +4,37 @@ using MyFirstConsoleIBMproject;
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 
-Employee employee = new Employee();
+//PermanentEmployee();
+
+ConsultingEmployee consultingEmployee = new ConsultingEmployee();
 Console.WriteLine("Please enter your ID:");
-employee.Id = Convert.ToInt32(Console.ReadLine());
+consultingEmployee.Id = Convert.ToInt32(Console.ReadLine());    
 Console.WriteLine("Please enter your Employee ID:");
-employee.EmployeeId = Convert.ToInt32(Console.ReadLine());
+consultingEmployee.EmployeeId = Convert.ToInt32(Console.ReadLine());    
 Console.WriteLine("Please enter your Name:");
-employee.Name = Console.ReadLine();
-Console.WriteLine("Please enter your City:");   
-employee.City = Console.ReadLine();
+consultingEmployee.Name = Console.ReadLine();
+Console.WriteLine("Please enter your City:");
+consultingEmployee.City = Console.ReadLine();
 Console.WriteLine("Please enter your Age:");
-employee.Age = Convert.ToInt32(Console.ReadLine());
+consultingEmployee.Age = Convert.ToInt32(Console.ReadLine());   
 Console.WriteLine("Please enter your Role:");
-employee.Role = Console.ReadLine();
-Console.WriteLine("Please enter your Email:");
-employee.Email = Console.ReadLine();    
+consultingEmployee.Role = Console.ReadLine();   
+Console.WriteLine("Please enter your Email:");  
+consultingEmployee.Email = Console.ReadLine();
 Console.WriteLine("Please enter your Salary:");
-employee.Salary = Convert.ToDouble(Console.ReadLine()); 
-employee.DisplayPersonDetails();
-Console.WriteLine($"Personal Info: {employee.GetPersonInfo()}");  
-Console.WriteLine($"Employee Info: {employee.EmployeeId}, Role: {employee.Role}, Email: {employee.Email}, Salary: {employee.Salary:C}"); // :C formats as currency    
+consultingEmployee.Salary = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Please enter your Consulting Firm:");
+consultingEmployee.ConsultingFirm = Console.ReadLine();
+Console.WriteLine("Please enter your Contract Duration (in months):");
+consultingEmployee.ContractDuration = Convert.ToInt32(Console.ReadLine());
+//consultingEmployee.DisplayPersonDetails();
+Console.WriteLine($"Personal Info: {consultingEmployee.GetPersonInfo()}");
+    
+Console.WriteLine($"Employee Info: {consultingEmployee.EmployeeId}, Role: {consultingEmployee.Role}, Email: {consultingEmployee.Email}, Salary: {consultingEmployee.Salary:C}"); // :C formats as currency
+Console.WriteLine($"Consulting Firm: {consultingEmployee.ConsultingFirm}, Contract Duration: {consultingEmployee.ContractDuration} months");
+
+
+
 
 //Product myproduct = new Product();
 
@@ -312,4 +323,28 @@ static void PersonDetailsDemo()
     Console.WriteLine($"Person info:{person1.GetPersonInfo()}");
     Console.WriteLine($"Person 1 details: {person1.ToString()}"); // Using ToString() method       
 
+}
+
+static void PermanentEmployee()
+{
+    Employee employee = new Employee();
+    Console.WriteLine("Please enter your ID:");
+    employee.Id = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Employee ID:");
+    employee.EmployeeId = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Name:");
+    employee.Name = Console.ReadLine();
+    Console.WriteLine("Please enter your City:");
+    employee.City = Console.ReadLine();
+    Console.WriteLine("Please enter your Age:");
+    employee.Age = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Role:");
+    employee.Role = Console.ReadLine();
+    Console.WriteLine("Please enter your Email:");
+    employee.Email = Console.ReadLine();
+    Console.WriteLine("Please enter your Salary:");
+    employee.Salary = Convert.ToDouble(Console.ReadLine());
+    employee.DisplayPersonDetails();
+    Console.WriteLine($"Personal Info: {employee.GetPersonInfo()}");
+    Console.WriteLine($"Employee Info: {employee.EmployeeId}, Role: {employee.Role}, Email: {employee.Email}, Salary: {employee.Salary:C}"); // :C formats as currency    
 }
