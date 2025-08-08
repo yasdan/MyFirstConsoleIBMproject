@@ -4,19 +4,7 @@ using MyFirstConsoleIBMproject;
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 
-//VariableDeclarationdemo();
-
-//PersonDetails();
-
-//iresult = CalculationDemo();
-//Console.WriteLine( $"The result is: {CalculationDemo()}");
-
-//LoopsDemo();
-//StudentGradingDemo();
-
-//TwoDimensionArraydemo();
-
-JaggedArrayDemo();
+//DataTypeRanges();
 
 static void VariableDeclarationdemo()
 {
@@ -209,4 +197,35 @@ static void JaggedArrayDemo()
         }
         Console.WriteLine();
     }
+}
+
+static void DataTypeRanges()
+{
+
+    //VariableDeclarationdemo();
+
+    //PersonDetails();
+
+    //iresult = CalculationDemo();
+    //Console.WriteLine( $"The result is: {CalculationDemo()}");
+
+    //LoopsDemo();
+    //StudentGradingDemo();
+
+    //TwoDimensionArraydemo();
+
+    //JaggedArrayDemo();
+
+    // value types data ranges
+
+
+    Console.WriteLine(int.MinValue + " " + int.MaxValue);
+    Console.WriteLine(long.MinValue + " " + long.MaxValue);
+    Console.WriteLine(short.MinValue + " " + short.MaxValue);
+    Console.WriteLine(byte.MinValue + " " + byte.MaxValue);
+    Console.WriteLine(float.MinValue + " " + float.MaxValue);
+    Console.WriteLine(double.MinValue + " " + double.MaxValue);
+    Console.WriteLine(decimal.MinValue + " " + decimal.MaxValue);
+    Console.WriteLine(char.MinValue + " " + char.MaxValue);
+    Console.WriteLine(bool.FalseString + " " + bool.TrueString);
 }
