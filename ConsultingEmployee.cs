@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyFirstConsoleIBMproject
 {
-    internal class ConsultingEmployee : Employee
+    internal sealed class ConsultingEmployee : Employee
     {
         public string? ConsultingFirm { get; set; } //nullable
 
