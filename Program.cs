@@ -4,39 +4,14 @@ using MyFirstConsoleIBMproject;
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 
-GenericCollections GenericCollections = new GenericCollections();
+Shape<String> shape = new Shape<string>();
 
-//adding persons to the generic list
-Console.WriteLine("How many persons you want to add to the generic list:");
-int personCount = Convert.ToInt32(Console.ReadLine());
+shape.ShapeName = "Circle";
+Console.WriteLine($"Shape Name: {shape.ShapeName}");
 
-for(int i = 0;i < personCount; i++)
-{
-   //GenericCollections.AddPerson(new Person());
-    Console.WriteLine($"Please enter details for person {i + 1}:");
-    Console.WriteLine("Please enter your ID:");
-    int id = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Please enter your Name:");
-    string? name = Console.ReadLine();
-    Console.WriteLine("Please enter your City:");
-    string? city = Console.ReadLine();
-    Console.WriteLine("Please enter your Age:");
-    int age = Convert.ToInt32(Console.ReadLine());
-   
 
-    Person person = new Person(id, name, city, age);
-    GenericCollections.AddPerson(person);
-}
-// Displaying all the persons in the generic list
 
-Console.WriteLine("\nPerson details from  the generic list...");
-
-// Displaying the persons in the generic list
-Console.WriteLine("\nPersons in the list:");
-foreach (var person in GenericCollections.persons)
-{
-    person.DisplayPersonDetails();
-}
+//GenericPersonListDemo();
 
 
 //GenericStringNames();
@@ -497,3 +472,47 @@ static void GenericStringNames()
     GenericCollections.RemoveName(nameToRemove);
     GenericCollections.DisplayNames();
 }
+
+static void GenericPersonListDemo()
+{
+    GenericCollections GenericCollections = new GenericCollections();
+
+    //adding persons to the generic list
+    Console.WriteLine("How many persons you want to add to the generic list:");
+    int personCount = Convert.ToInt32(Console.ReadLine());
+
+    for (int i = 0; i < personCount; i++)
+    {
+
+        Console.WriteLine($"Please enter details for person {i + 1}:");
+        Console.WriteLine("Please enter your ID:");
+        int id = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Please enter your Name:");
+        string? name = Console.ReadLine();
+        Console.WriteLine("Please enter your City:");
+        string? city = Console.ReadLine();
+        Console.WriteLine("Please enter your Age:");
+        int age = Convert.ToInt32(Console.ReadLine());
+
+
+        Person person = new Person(id, name, city, age);
+        GenericCollections.AddPerson(person);
+    }
+    // Displaying all the persons in the generic list
+
+    Console.WriteLine("\nPerson details from  the generic list...");
+
+    // Displaying the persons in the generic list
+    Console.WriteLine("\nPersons in the list:");
+    foreach (var person in GenericCollections.persons)
+    {
+        person.DisplayPersonDetails();
+    }
+
+    Console.WriteLine("Enter ID of the person you want to display");
+    int idx = Convert.ToInt32(Console.ReadLine());
+
+     GenericCollections.GetPersonWithID(idx);
+}
+
+

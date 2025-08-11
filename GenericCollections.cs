@@ -84,6 +84,26 @@ namespace MyFirstConsoleIBMproject
                 Console.WriteLine(person.GetPersonInfo()); // displays each Person's info in the persons list
             }
         }
-        // generic list to hold Employee objects    
+
+        // Displaying a person with Id
+        public void GetPersonWithID(int id)
+        {
+            foreach(var person in persons)
+            {
+                if (id != person.Id)
+                {
+                  // Console.WriteLine("Person with this Id not found");
+
+                }
+                else
+                {
+                    Console.WriteLine(person.Id + " " + person.Name + " " + person.Age +
+                      "  " + person.City);
+                }
+                
+            }
+
+        }
+           
     }
 }
