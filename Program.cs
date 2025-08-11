@@ -3,27 +3,12 @@ using MyFirstConsoleIBMproject;
 
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
-Artist Artist = new Artist();
 
-Console.WriteLine("Please enter your Artist ID:");
-Artist.ArtistId = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Please enter your ID:");
-Artist.Id = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Please enter your Name:");
-Artist.Name = Console.ReadLine();
-Console.WriteLine("Please enter your City:");
-Artist.City = Console.ReadLine();
-Console.WriteLine("Please enter your Age:");
-Artist.Age = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Please enter your Stage Name:");
-Artist.StageName = Console.ReadLine();
-Console.WriteLine("Please enter your Genre:");
-Artist.Genre = Console.ReadLine();
-Console.WriteLine("Please enter the number of Albums Released:");
-Artist.AlbumsReleased = Convert.ToInt32(Console.ReadLine());
-Artist.DisplayArtistDetails();
-Console.WriteLine($"Artist Info: {Artist.GetArtistInfo()}");
-Artist.UpdateArtistDetails("New Stage Name", "New Genre", 5);
+//TechnoprenureDemo();
+
+
+
+//ArtistDemo();
 
 
 
@@ -374,4 +359,55 @@ static void ConsultntEmployee()
 
     Console.WriteLine($"Employee Info: {consultingEmployee.EmployeeId}, Role: {consultingEmployee.Role}, Email: {consultingEmployee.Email}, Salary: {consultingEmployee.Salary:C}"); // :C formats as currency
     Console.WriteLine($"Consulting Firm: {consultingEmployee.ConsultingFirm}, Contract Duration: {consultingEmployee.ContractDuration} months");
+}
+
+static void ArtistDemo()
+{
+    // Creating an instance of the Artist class and prompting for details
+    Artist Artist = new Artist();
+
+    Console.WriteLine("Please enter your Artist ID:");
+    Artist.ArtistId = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your ID:");
+    Artist.Id = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Name:");
+    Artist.Name = Console.ReadLine();
+    Console.WriteLine("Please enter your City:");
+    Artist.City = Console.ReadLine();
+    Console.WriteLine("Please enter your Age:");
+    Artist.Age = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Stage Name:");
+    Artist.StageName = Console.ReadLine();
+    Console.WriteLine("Please enter your Genre:");
+    Artist.Genre = Console.ReadLine();
+    Console.WriteLine("Please enter the number of Albums Released:");
+    Artist.AlbumsReleased = Convert.ToInt32(Console.ReadLine());
+    Artist.DisplayArtistDetails();
+    Console.WriteLine($"Artist Info: {Artist.GetArtistInfo()}");
+    //Artist.UpdateArtistDetails("New Stage Name", "New Genre", 5);
+}
+
+static void TechnoprenureDemo()
+{
+    TechnoPrenure technoPrenure = new TechnoPrenure();
+    Console.WriteLine("Please enter your ID:");
+    technoPrenure.Id = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Name:");
+    technoPrenure.Name = Console.ReadLine();
+    Console.WriteLine("Please enter your City:");
+    technoPrenure.City = Console.ReadLine();
+    Console.WriteLine("Please enter your Age:");
+    technoPrenure.Age = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Entrepreneur ID:");
+    technoPrenure.EntroprenurId = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Business Name:");
+    technoPrenure.BusinessName = Console.ReadLine();
+    Console.WriteLine("Please enter your Business Type:");
+    technoPrenure.BusinessType = Console.ReadLine();
+    Console.WriteLine("Please enter your Investment Amount:");
+    technoPrenure.InvestmentAmount = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Please enter your Years in Business:");
+    technoPrenure.YearsInBusiness = Convert.ToInt32(Console.ReadLine());
+    technoPrenure.DisplayEntroprenurDetails();
+    Console.WriteLine($"Entrepreneur Info: {technoPrenure.GetEntroprenurInfo()}");
 }

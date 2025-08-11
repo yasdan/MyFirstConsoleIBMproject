@@ -21,7 +21,8 @@ namespace MyFirstConsoleIBMproject
             Genre = "Unknown";
             AlbumsReleased = 0;
         }
-        public Artist(int artistId, int id,string name, int age,string city, string stageName, string genre, int albumsReleased)
+        public Artist(int artistId, int id,string name, int age,string city,
+            string stageName, string genre, int albumsReleased)
             : base(id,name,city,age)
         {
             ArtistId = artistId;
@@ -56,7 +57,8 @@ namespace MyFirstConsoleIBMproject
         // override ToString method to return artist details
         public override string ToString()
         {
-            return $"Artist ID: {ArtistId}, Stage Name: {StageName}, Genre: {Genre}, Albums Released: {AlbumsReleased}, " +
+            return $"Artist ID: {ArtistId}, Stage Name: {StageName}, Genre: {Genre}," +
+                $" Albums Released: {AlbumsReleased}, " +
                    base.ToString(); // Call the base class ToString method
         }
     }
