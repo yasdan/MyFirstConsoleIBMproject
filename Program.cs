@@ -1,33 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using MyFirstConsoleIBMproject;
 
-Console.WriteLine("Hello, World!"); 
+Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 
-GenericCollections GenericCollections = new GenericCollections();
 
-// Adding numbers to the generic list
-Console.WriteLine("How many numbers want to add to the generic list:");
-int count = Convert.ToInt32(Console.ReadLine());
-for (int i = 0; i < count; i++)
-{
-    Console.WriteLine($"Please enter number {i + 1}:");
-    int number = Convert.ToInt32(Console.ReadLine());
-    GenericCollections.AddNumbers(number);
-}
 
-// Displaying the numbers in the generic list
-GenericCollections.DisplayNumbers();
+//GenericStringNames();
 
+//GenericNumberList();
 
 //GenericCollections.AddNumbers(10);
 
 //TechnoprenureDemo();
 
-
 //ArtistDemo();
-
-
 
 
 //ConsultntEmployee();
@@ -427,4 +414,53 @@ static void TechnoprenureDemo()
     technoPrenure.YearsInBusiness = Convert.ToInt32(Console.ReadLine());
     technoPrenure.DisplayEntroprenurDetails();
     Console.WriteLine($"Entrepreneur Info: {technoPrenure.GetEntroprenurInfo()}");
+}
+
+static void GenericNumberList()
+{
+    GenericCollections GenericCollections = new GenericCollections();
+
+    // Adding numbers to the generic list
+    Console.WriteLine("How many numbers want to add to the generic list:");
+    int count = Convert.ToInt32(Console.ReadLine());
+    for (int i = 0; i < count; i++)
+    {
+        Console.WriteLine($"Please enter number {i + 1}:");
+        int number = Convert.ToInt32(Console.ReadLine());
+        GenericCollections.AddNumbers(number);
+    }
+
+    // Displaying the numbers in the generic list
+    GenericCollections.DisplayNumbers();
+
+    // Removing a number from the generic list
+
+    Console.WriteLine("Please enter a number to remove from the list:");
+    int numberToRemove = Convert.ToInt32(Console.ReadLine());
+    GenericCollections.RemoveNumber(numberToRemove);
+    GenericCollections.DisplayNumbers();
+    GenericCollections.ClearNumbers(); // Clear all numbers from the list   
+    GenericCollections.DisplayNumbers(); // Display the list after clearing
+}
+
+static void GenericStringNames()
+{
+    GenericCollections GenericCollections = new GenericCollections();
+
+    Console.WriteLine("How many names you want to add to the generic list:");
+    int count = Convert.ToInt32(Console.ReadLine());
+    for (int i = 0; i < count; i++)
+    {
+        Console.WriteLine($"Please enter name {i + 1}:");
+        string? name = Console.ReadLine();
+        GenericCollections.AddName(name);
+    }
+
+    GenericCollections.DisplayNames();
+
+    Console.WriteLine("Please enter a name to remove from the list:");
+    string? nameToRemove = Console.ReadLine();
+
+    GenericCollections.RemoveName(nameToRemove);
+    GenericCollections.DisplayNames();
 }

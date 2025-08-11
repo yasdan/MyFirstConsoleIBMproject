@@ -22,6 +22,20 @@ namespace MyFirstConsoleIBMproject
         {
             names.Add(name); // adds a string to the names list
         }
+
+        public void RemoveName(string name)
+        {
+            if (names.Contains(name))
+            {
+                names.Remove(name); // removes the specified name from the names list
+                Console.WriteLine($"\nName '{name}' removed from the list.");
+            }
+            else
+            {
+                Console.WriteLine($"\nName '{name}' not found in the list.");
+            }
+        }
+
         public void AddPerson(Person person)
         {
             persons.Add(person); // adds a Person object to the persons list
@@ -34,6 +48,25 @@ namespace MyFirstConsoleIBMproject
             {
                 Console.Write(number +"  "); // displays each number in the numbers list
             }
+        }
+
+        public void RemoveNumber(int number)
+        {
+            if (numbers.Contains(number))
+            {
+                numbers.Remove(number); // removes the specified number from the numbers list
+                Console.WriteLine($"\nNumber {number} removed from the list.");
+            }
+            else
+            {
+                Console.WriteLine($"\nNumber {number} not found in the list.");
+            }
+        }
+
+        public void ClearNumbers()
+        {
+            numbers.Clear(); // clears all numbers from the numbers list
+            Console.WriteLine("\nAll numbers cleared from the list.");
         }
 
         public void DisplayNames() {    
