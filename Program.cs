@@ -1,11 +1,28 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using MyFirstConsoleIBMproject;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Hello, World!"); 
 Console.WriteLine("Welcome To C#.Net Programing Fundamentals.");
 
-//TechnoprenureDemo();
+GenericCollections GenericCollections = new GenericCollections();
 
+// Adding numbers to the generic list
+Console.WriteLine("How many numbers want to add to the generic list:");
+int count = Convert.ToInt32(Console.ReadLine());
+for (int i = 0; i < count; i++)
+{
+    Console.WriteLine($"Please enter number {i + 1}:");
+    int number = Convert.ToInt32(Console.ReadLine());
+    GenericCollections.AddNumbers(number);
+}
+
+// Displaying the numbers in the generic list
+GenericCollections.DisplayNumbers();
+
+
+//GenericCollections.AddNumbers(10);
+
+//TechnoprenureDemo();
 
 
 //ArtistDemo();
